@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputHandler.h"
+#import "PaymentGateway.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+       
+        
+        InputHandler *inputHandler = [[InputHandler alloc] init];
+        NSString *userAnswerString = [inputHandler userInputForPrompt:@"Thank you for shopping at Acme.com Your total today is $xxx Please select your payment method:\n1: Paypal, 2: Stripe, 3: Amazon"];
+        int userAnswer = [userAnswerString intValue];
+        PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
+        //NSLog(@"%i", userAnswer);
     }
     return 0;
 }
