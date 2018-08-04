@@ -12,7 +12,7 @@
 
 
 - (void)processPaymentAmount:(NSInteger)integer {
-    <#code#>
+    NSLog(@"Let's make Jeff Bezos richer!");
 }
 
 @end

@@ -18,6 +18,6 @@
 
 @property (nonatomic, weak) id<PaymentGateway> delegate;
 
-
+- (void) processPaymentAmount : (NSInteger)integer;
 
 @end
