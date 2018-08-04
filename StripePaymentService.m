@@ -11,7 +11,7 @@
 @implementation StripePaymentService
 
 - (void)processPaymentAmount:(NSInteger)integer { 
-    NSLog(@"Isn't Stripe a beer?");
+   NSLog(@"Stripe processed $%li", (long)integer);
 }
 
 - (BOOL)canProcessPayment{

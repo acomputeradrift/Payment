@@ -11,7 +11,7 @@
 @implementation PaypalPaymentService
 
 - (void)processPaymentAmount:(NSInteger)integer {
-    NSLog(@"Who uses Paypal?");
+    NSLog(@"Paypal processed $%li", (long)integer);
 }
 
 - (BOOL)canProcessPayment{

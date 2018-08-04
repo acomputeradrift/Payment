@@ -19,8 +19,8 @@ int main(int argc, const char * argv[]) {
         
         
         InputHandler *inputHandler = [[InputHandler alloc] init];
-        int randomNumber = arc4random_uniform(1000);
-        NSString *fullString = [NSString stringWithFormat:@"Thank you for shopping at Acme.com Your total today is $%i Please select your payment method:\n1: Paypal, 2: Stripe, 3: Amazon", randomNumber];
+        int price = arc4random_uniform(1000);
+        NSString *fullString = [NSString stringWithFormat:@"Thank you for shopping at Acme.com Your total today is $%i Please select your payment method:\n1: Paypal, 2: Stripe, 3: Amazon\nPlease enter number:", price];
         NSString *userAnswerString = [inputHandler userInputForPrompt:fullString];
         int userAnswer = [userAnswerString intValue];
         PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
@@ -29,19 +29,22 @@ int main(int argc, const char * argv[]) {
             case 1:{
                 PaypalPaymentService *paypal = [[PaypalPaymentService alloc] init];
                 paymentGateway.delegate = paypal;
-                [paymentGateway processPaymentAmount:randomNumber];
+                [paymentGateway processPaymentAmount:price];
+                
                 break;
             }
             case 2:{
                 StripePaymentService *stripe = [[StripePaymentService alloc] init];
                 paymentGateway.delegate = stripe;
-                [paymentGateway processPaymentAmount:randomNumber];
+                [paymentGateway processPaymentAmount:price];
+               
                 break;
             }
             case 3:{
                 AmazonPaymentService *amazon = [[AmazonPaymentService alloc] init];
                 paymentGateway.delegate = amazon;
-                [paymentGateway processPaymentAmount:randomNumber];
+                [paymentGateway processPaymentAmount:price];
+               
                 break;
             }
             default:{

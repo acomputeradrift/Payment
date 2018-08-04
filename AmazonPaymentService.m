@@ -12,7 +12,7 @@
 
 
 - (void)processPaymentAmount:(NSInteger)integer {
-    NSLog(@"Let's make Jeff Bezos richer!");
+   NSLog(@"Amazon processed $%li", (long)integer);
 }
 
 - (BOOL)canProcessPayment{
