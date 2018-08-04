@@ -12,6 +12,8 @@
 //delegator
 @protocol PaymentGateway
 - (void) processPaymentAmount : (NSInteger)integer;
+- (BOOL) canProcessPayment;
+
 @end
 
 @interface PaymentGateway : NSObject

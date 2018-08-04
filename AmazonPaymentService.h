@@ -11,4 +11,6 @@
 
 @interface AmazonPaymentService : NSObject <PaymentGateway>;
 
+- (BOOL) canProcessPayment;
+
 @end

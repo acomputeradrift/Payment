@@ -11,4 +11,6 @@
 
 @interface PaypalPaymentService : NSObject <PaymentGateway>;
 
+- (BOOL) canProcessPayment;
+
 @end

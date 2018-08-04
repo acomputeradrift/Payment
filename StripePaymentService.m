@@ -14,4 +14,14 @@
     NSLog(@"Isn't Stripe a beer?");
 }
 
+- (BOOL)canProcessPayment{
+    int number = arc4random_uniform(2);
+    if (number == 0){
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
 @end

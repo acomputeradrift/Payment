@@ -11,4 +11,6 @@
 
 @interface StripePaymentService : NSObject <PaymentGateway>;
 
+- (BOOL) canProcessPayment;
+
 @end

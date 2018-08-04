@@ -11,7 +11,11 @@
 @implementation PaymentGateway
 
 - (void)processPaymentAmount:(NSInteger)integer{
-    [self.delegate processPaymentAmount:integer];
+    if ([self.delegate canProcessPayment]){
+        [self.delegate processPaymentAmount:integer];
+    }else{
+        NSLog(@"Sorry server down, use Bitcoin");
     }
+}
 
 @end
